@@ -2,6 +2,7 @@ let sudoku = [];
 var random;
 
 for (let x = 1; x < 10; x++) {
+    
     random = Math.floor(Math.random() * (9 - 1 + 1) + 1);
     console.log("random", random);
 

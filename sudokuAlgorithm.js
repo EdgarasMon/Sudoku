@@ -1,15 +1,30 @@
 var sudoku = [];
+var sudoku2 = [];
+var random;
 
 function createSudoku() {
-for (var x=1; x < 10; x++) {
-  for (var y=1; y < 10; y++) {
-    coordinateX = parseInt(x);
-    //console.log(coordinateX);
-    coordinateY = parseInt(y);
-    //console.log(coordinateY);
-    //sudoku += "x" + coordinateX;
-    //sudoku += "y" + coordinateY;
-    sudoku.push(y);
+for (var i=1; i < 10; i++) {
+  for (var x = 1; x < 10; x++) {
+    random = Math.floor(Math.random() * (9 - 1 + 1) + 1);
+    console.log("random", random);
+    console.log("koordinate " + x);
+    sudoku.push([x]);
+  if ( sudoku.includes(random) ) {
+    console.log("Yra toks elementas");
+    var loopCount = 0;
+    while ( sudoku.includes(random) ) {
+        console.log(random, "YRA");
+        random = Math.floor(Math.random() * (9 - 1 + 1) + 1);
+        loopCount++;
+        if (loopCount >= 9) break;
+    }
+    console.log("RANDOM REIKSME PASIBAIGUS FOR ", random);
+    sudoku.push([random]);
+} else {
+    console.log("nera tokio elemento irasom random");
+    sudoku.push([random]);
+}
+console.log("sudoku: ", sudoku);
 
   }
  }
